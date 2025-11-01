@@ -1,22 +1,25 @@
 const courses = [
-  { code: "WDD130", name: "Web Fundamentals", credits: 3, prefix: "WDD", completed: true },
-  { code: "WDD231", name: "Frontend Dev II", credits: 3, prefix: "WDD", completed: false },
-  { code: "CSE110", name: "Intro to Programming", credits: 2, prefix: "CSE", completed: true }
+  { code: "CSE110", name: "Intro to Programming", credits: 2, prefix: "CSE", completed: true },
+  { code: "CSE111", name: "Programming with Functions", credits: 2, prefix: "CSE", completed: false },
+  { code: "CSE210", name: "Programming with Classes", credits: 2, prefix: "CSE", completed: false },
+  { code: "WDD130", name: "Web Fundamentals", credits: 2, prefix: "WDD", completed: true },
+  { code: "WDD131", name: "Dynamic Web Fundamentals", credits: 2, prefix: "WDD", completed: true },
+  { code: "WDD231", name: "Frontend Dev II", credits: 2, prefix: "WDD", completed: false }
 ];
 
-function displayCourses(filteredCourses) {
-  const container = document.getElementById("courseContainer");
-  container.innerHTML = "";
+const container = document.getElementById("courseContainer");
+const totalCount = document.getElementById("totalCount");
 
-  filteredCourses.forEach(course => {
+function displayCourses(list) {
+  container.innerHTML = "";
+  list.forEach(course => {
     const div = document.createElement("div");
-    div.className = course.completed ? "course completed" : "course";
-    div.innerHTML = `<h3>${course.code}</h3><p>${course.name}</p><p>${course.credits} credits</p>`;
+    div.classList.add("course");
+    div.classList.add(course.completed ? "completed" : "not-completed");
+    div.innerHTML = `${course.completed ? "✓ " : ""}${course.code}`;
     container.appendChild(div);
   });
-
-  const total = filteredCourses.reduce((sum, c) => sum + c.credits, 0);
-  document.getElementById("totalCredits").textContent = total;
+  totalCount.textContent = list.length;
 }
 
 displayCourses(courses);
