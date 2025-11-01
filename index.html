@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Home page for WDD231 projects by Lawrence Ngwenya">
+  <meta name="author" content="Lawrence Ngwenya">
+  <title>WDD231 | Home</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/small.css">
+  <link rel="stylesheet" href="styles/large.css">
+
+  <!-- JavaScript Files -->
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/date.js" defer></script>
+  <script src="scripts/courses.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <img src="images/logo.svg" alt="Site Logo">
+    <span>Lawrence Ngwenya</span>
+    <button id="menu" aria-label="Menu">☰</button>
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="#">Chamber</a>
+      <a href="#">Final</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Home</h1>
+
+    <section>
+      <h2>About This Course</h2>
+      <p>This site hosts my projects for WDD231: Web Frontend Development II.</p>
+    </section>
+
+    <section id="certificate">
+      <h2>Certificate Courses</h2>
+      <div id="courseContainer"></div>
+      <div class="buttons">
+        <button id="all">All Courses</button>
+        <button id="wdd">WDD courses</button>
+        <button id="cse">CSE courses</button> 
+      </div>
+      <p>Total Credits: <span id="totalCredits">0</span></p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Find me on GitHub and LinkedIn below.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social">
+      <a href="https://github.com/yourgithubusername" target="_blank">GitHub</a> |
+      <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+    </div>
+    <p>&copy; <span id="year"></span> Lawrence Ngwenya | Zimbabwe</p>
+    <p id="lastModified"></p>
+  </footer>
+
+</body>
+</html>
