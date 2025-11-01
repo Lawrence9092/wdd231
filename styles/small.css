@@ -22,7 +22,6 @@ nav {
   font-size: 1.5rem;
 }
 
-/* Show menu when active */
 nav.show {
   display: flex;
   flex-direction: column;
