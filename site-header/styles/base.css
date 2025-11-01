@@ -1,55 +1,39 @@
-/*-------- COLOR SCHEME --------
-terra cotta #E07A5F
-deep slate blue #3D405B
-*/
-
-/*********** SITE WIDE **********/
-* {
-    font-family: "Josefin Sans", sans-serif;
-    box-sizing: border-box;
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/************* HEADER *************/
-header {
-    display: grid;
-    grid-template-columns: 24px auto 44px;
-    padding: 5px 0 5px 10px;
-    align-items: end;
-    border-bottom: solid 1px #ddd;
-    column-gap: 8px;
+header, footer {
+  background-color: #1e293b;
+  color: white;
+  padding: 1rem;
+  text-align: center;
 }
 
-header img {
-    display: bock;
-    width: 100%;
-    height: auto;
-    padding-bottom: 5px;
-}
-header span {
-    font-size: 1.2rem;
-    color: 3D405B;
+nav {
+  display: none;
 }
 
-/********** HAMBURGER NAVIGATION ********/
-.hamburger {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: #3D405B;
-    cursor: pointer;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+#menu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
 }
 
-.hamburger::before {
-    content: "\2636";
+/* Show menu when active */
+nav.show {
+  display: flex;
+  flex-direction: column;
+  background: #334155;
 }
 
-.hamburger.show::before {
-    content: "0007";
+section {
+  padding: 1rem;
 }
 
-
-.hamburger::after {
-    content: "\2630";
-    font-size: 2rem;
+img {
+  max-width: 100%;
+  height: auto;
 }
