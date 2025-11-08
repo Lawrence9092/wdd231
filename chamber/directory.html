@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Basic Meta Information -->
   <title>Business Directory | Harare Chamber of Commerce</title>
   <meta name="description" content="Official directory of the Harare Chamber of Commerce — connecting local businesses, organizations, and entrepreneurs in Zimbabwe's capital.">
   <meta name="author" content="Lawrence Ngwenya">
@@ -12,7 +11,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
-  <!-- Facebook / Open Graph Meta Tags -->
+  <!-- Social Media Meta Tags -->
   <meta property="og:title" content="Harare Chamber of Commerce Directory">
   <meta property="og:description" content="Stay up to date with business news and events around Harare — networking, sponsorships, and local commerce opportunities.">
   <meta property="og:image" content="https://lawrencengwenya.github.io/chamber-site/images/chamberofcommerce.png">
@@ -24,30 +23,27 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- CSS Link -->
-  <link rel="stylesheet" href="css/normalize.css">
+  <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
-
 </head>
 <body>
   <header>
-  <div class="logo-title">
-    <img src="images/chamberofcommerce.png" alt="Harare Chamber of Commerce logo" class="logo">
-    <h1>Harare Chamber of Commerce</h1>
-  </div>
+    <div class="logo-title">
+      <img src="images/chamberofcommerce.png" alt="Harare Chamber of Commerce logo" class="logo">
+      <h1>Harare Chamber of Commerce</h1>
+    </div>
 
-  <nav class="main-nav">
-    <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
-    <ul id="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="directory.html" class="active">Directory</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <nav class="main-nav">
+      <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html" class="active">Directory</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Main Section -->
   <main>
     <h2>Business Directory</h2>
     <p>Select your view preference:</p>
@@ -55,12 +51,12 @@
       <button id="gridView">Grid View</button>
       <button id="listView">List View</button>
     </div>
+
     <section id="memberDirectory" class="grid-view">
-      <!-- Dynamic member cards will be inserted here later -->
+      <!-- Dynamic member cards will appear here -->
     </section>
   </main>
 
-  <!-- Footer Section -->
   <footer>
     <p>Contact: info@hararechamber.co.zw | Phone: +263 775 563 266</p>
     <p>© <span id="year"></span> Harare Chamber of Commerce | Developed by Lawrence Ngwenya | WDD 231</p>
@@ -68,28 +64,6 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="js/scripts.js">
-    // Automatically display current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Automatically display last modified date
-    document.getElementById('lastModified').textContent = document.lastModified;
-
-    // Placeholder for grid/list view logic
-    const gridBtn = document.getElementById('gridView');
-    const listBtn = document.getElementById('listView');
-    const directory = document.getElementById('memberDirectory');
-
-    gridBtn.addEventListener('click', () => {
-      directory.classList.add('grid-view');
-      directory.classList.remove('list-view');
-    });
-
-    listBtn.addEventListener('click', () => {
-      directory.classList.add('list-view');
-      directory.classList.remove('grid-view');
-    });
-  </script>
-
+  <script src="js/scripts.js"></script>
 </body>
 </html>
