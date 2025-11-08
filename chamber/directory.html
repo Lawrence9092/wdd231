@@ -1,38 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Directory page for the Harare Zimbabwe Chamber of commerce by Lawrence Ngwenya"/>
-    <meta name="author" content="Lawrence Ngwenya"/>
-    <title>Harare Zimbabwe Chamber of Commerce</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--- Favicon --->
-    <link rel="icon" href="favicon.ico">
-    
-    <!--- Social Mdia Settings -->
-    <meta property="og:title" content="Harare Zimbabwe Chamber of Commerce">
-    <meta property="og:description" content="Be upto date with the news and events around Zimbabwes Capital city Harare. From networking events, publications, sponsorships and advertisings">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:image" content="https://drive.google.com/file/d/1kJ1w1v5shlnm6HQ1oQvxiYDBfz43DFFA/view?usp=sharing">
-    <meta property="og:image" content="https://lawrencengwenya.github.io/chamber-site/images/chamber-banner.png">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lawrencengwenya.github.io/chamber-site/directory.html">
-    <meta property="og:site_name" content="Apple">
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Basic Meta Information -->
+  <title>Business Directory | Harare Chamber of Commerce</title>
+  <meta name="description" content="Official directory of the Harare Chamber of Commerce — connecting local businesses, organizations, and entrepreneurs in Zimbabwe's capital.">
+  <meta name="author" content="Lawrence Ngwenya">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/larger.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
-  <!-- JS -->
-  <script src="scripts/navigation.js" defer></script>
-  <script src="scripts/date.js" defer></script>
-  <script src="scripts/courses.js" defer></script>
+  <!-- Facebook / Open Graph Meta Tags -->
+  <meta property="og:title" content="Harare Chamber of Commerce Directory">
+  <meta property="og:description" content="Stay up to date with business news and events around Harare — networking, sponsorships, and local commerce opportunities.">
+  <meta property="og:image" content="https://lawrencengwenya.github.io/chamber-site/images/chamberofcommerce.png">
+  <meta property="og:url" content="https://lawrencengwenya.github.io/chamber-site/chamber/directory.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Harare Chamber of Commerce">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <body>
-    
+  <header>
+  <div class="logo-title">
+    <img src="images/chamberofcommerce.png" alt="Harare Chamber of Commerce logo" class="logo">
+    <h1>Harare Chamber of Commerce</h1>
+  </div>
+
+  <nav class="main-nav">
+    <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+    <ul id="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="directory.html" class="active">Directory</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <!-- Main Section -->
+  <main>
+    <h2>Business Directory</h2>
+    <p>Select your view preference:</p>
+    <div class="view-toggle">
+      <button id="gridView">Grid View</button>
+      <button id="listView">List View</button>
+    </div>
+    <section id="memberDirectory" class="grid-view">
+      <!-- Dynamic member cards will be inserted here later -->
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>Contact: info@hararechamber.co.zw | Phone: +263 775 563 266</p>
+    <p>© <span id="year"></span> Harare Chamber of Commerce | Developed by Lawrence Ngwenya | WDD 231</p>
+    <p>Last modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/scripts.js">
+    // Automatically display current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Automatically display last modified date
+    document.getElementById('lastModified').textContent = document.lastModified;
+
+    // Placeholder for grid/list view logic
+    const gridBtn = document.getElementById('gridView');
+    const listBtn = document.getElementById('listView');
+    const directory = document.getElementById('memberDirectory');
+
+    gridBtn.addEventListener('click', () => {
+      directory.classList.add('grid-view');
+      directory.classList.remove('list-view');
+    });
+
+    listBtn.addEventListener('click', () => {
+      directory.classList.add('list-view');
+      directory.classList.remove('grid-view');
+    });
+  </script>
+
 </body>
 </html>
