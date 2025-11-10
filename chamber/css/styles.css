@@ -52,12 +52,12 @@ header {
 }
 
 .logo {
-  width: 70px;              /* smaller logo like Timbuktu site */
+  width: 70px;
   height: 70px;
-  border-radius: 8px;       /* gives subtle rounded edge */
+  border-radius: 8px;
   object-fit: contain;
   display: block;
-  background-color: #fff;   /* white box like Timbuktu’s background */
+  background-color: #fff;
   padding: 6px;
 }
 
@@ -153,7 +153,17 @@ h2 {
   padding: 1rem;
   border-radius: 10px;
   background-color: var(--white);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* List view style */
+#memberDirectory.list-view .card {
+  display: block;
+  text-align: left;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #fafafa;
 }
 
 /* =========================
