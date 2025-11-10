@@ -98,6 +98,44 @@ h1 {
 }
 
 /* =========================
+   Hero Section
+========================= */
+.hero {
+  background-image: url("../images/harare-cityscape.jpg"); /* change filename if needed */
+  background-size: cover;
+  background-position: center;
+  color: var(--white);
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* dark overlay for contrast */
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-yellow);
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+/* =========================
    Main Content
 ========================= */
 main {
