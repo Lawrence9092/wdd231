@@ -6,10 +6,8 @@
   --secondary-yellow: #f7c948;
   --white: #ffffff;
   --text-dark: #222;
-  --text-light: #f9f9f9;
 }
 
-/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,13 +19,6 @@ body {
   color: var(--text-dark);
   background-color: var(--white);
   line-height: 1.6;
-}
-
-/* Global Image Rule */
-img {
-  max-width: 100%;
-  height: auto;
-  display: inline-block;
 }
 
 /* =========================
@@ -44,7 +35,6 @@ header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* LOGO + TITLE */
 .logo-title {
   display: flex;
   align-items: center;
@@ -56,7 +46,6 @@ header {
   height: 70px;
   border-radius: 8px;
   object-fit: contain;
-  display: block;
   background-color: #fff;
   padding: 6px;
 }
@@ -68,16 +57,13 @@ h1 {
   letter-spacing: 1px;
 }
 
-/* =========================
-   Navigation
-========================= */
+/* Navigation */
 .main-nav button {
   background: none;
   border: none;
   color: var(--white);
   font-size: 1.8rem;
   cursor: pointer;
-  display: block;
 }
 
 .main-nav ul {
@@ -140,7 +126,7 @@ h2 {
   color: var(--white);
 }
 
-/* Directory grid and list placeholders */
+/* Directory Grid & List */
 #memberDirectory {
   margin-top: 1.5rem;
   display: grid;
@@ -148,22 +134,20 @@ h2 {
   gap: 1rem;
 }
 
-#memberDirectory.grid-view .card {
+#memberDirectory .card {
   border: 1px solid #ddd;
   padding: 1rem;
   border-radius: 10px;
   background-color: var(--white);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* List view style */
-#memberDirectory.list-view .card {
+#memberDirectory.list-view {
   display: block;
-  text-align: left;
-  border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 8px;
-  background-color: #fafafa;
+}
+
+#memberDirectory.list-view .card {
+  margin-bottom: 1rem;
 }
 
 /* =========================
