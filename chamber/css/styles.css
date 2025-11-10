@@ -101,7 +101,7 @@ h1 {
    Hero Section
 ========================= */
 .hero {
-  background-image: url("../images/harare-cityscape.jpg"); /* change filename if needed */
+  background-image: url("../images/hero.jpg"); /* change filename if needed */
   background-size: cover;
   background-position: center;
   color: var(--white);
