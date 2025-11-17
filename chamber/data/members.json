@@ -1,7 +1,45 @@
-[
-  {
-    "name": "Chamber Print Solutions",
-    "membership": "Gold",
-    "email": "info@chamberprint.co.zw"
-  }
-]
+{
+  "members": [
+    {
+      "name": "Chamber Print Solutions",
+      "address": "12 Julius Nyerere Way, Harare",
+      "phone": "+263 71 555 6677",
+      "website": "https://chamberprint.co.zw",
+      "logo": "images/logos/chamberprint.png",
+      "email": "info@chamberprint.co.zw",
+      "membership": "Gold"
+    },
+    {
+      "name": "ZimTech Solutions",
+      "address": "45 Samora Machel Ave, Harare",
+      "phone": "+263 77 456 7890",
+      "website": "https://zimtech.co.zw",
+      "logo": "images/logos/zimtech.png",
+      "membership": "Gold"
+    },
+    {
+      "name": "Harare Fresh Foods",
+      "address": "Market Square, Harare",
+      "phone": "+263 77 222 1111",
+      "website": "https://freshfoods.co.zw",
+      "logo": "images/logos/freshfoods.png",
+      "membership": "Silver"
+    },
+    {
+      "name": "GreenLife Insurance",
+      "address": "Jason Moyo St, Harare",
+      "phone": "+263 71 333 4444",
+      "website": "https://greenlife.co.zw",
+      "logo": "images/logos/greenlife.png",
+      "membership": "Gold"
+    },
+    {
+      "name": "Metro Hardware",
+      "address": "Kwame Nkrumah Ave, Harare",
+      "phone": "+263 78 987 6543",
+      "website": "https://metrohardware.co.zw",
+      "logo": "images/logos/metrohardware.png",
+      "membership": "Bronze"
+    }
+  ]
+}

@@ -1,32 +1,39 @@
 // ==========================
 // Responsive Menu Toggle
 // ==========================
-const menuButton = document.getElementById('menu-toggle');
-const navMenu = document.getElementById('nav-menu');
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
 
-menuButton.addEventListener('click', () => {
-  navMenu.classList.toggle('show');
-});
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+}
 
 // ==========================
 // Footer Auto Updates
 // ==========================
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = document.lastModified;
+const yearSpan = document.getElementById("year");
+const lastModifiedSpan = document.getElementById("lastModified");
+
+if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+if (lastModifiedSpan) lastModifiedSpan.textContent = document.lastModified;
 
 // ==========================
-// Grid/List View Toggle
+// Grid/List View Toggle (Directory Page Only)
 // ==========================
-const gridBtn = document.getElementById('gridView');
-const listBtn = document.getElementById('listView');
-const directory = document.getElementById('memberDirectory');
+const gridBtn = document.getElementById("gridView");
+const listBtn = document.getElementById("listView");
+const directory = document.getElementById("memberDirectory");
 
-gridBtn.addEventListener('click', () => {
-  directory.classList.add('grid-view');
-  directory.classList.remove('list-view');
-});
+if (gridBtn && listBtn && directory) {
+  gridBtn.addEventListener("click", () => {
+    directory.classList.add("grid-view");
+    directory.classList.remove("list-view");
+  });
 
-listBtn.addEventListener('click', () => {
-  directory.classList.add('list-view');
-  directory.classList.remove('grid-view');
-});
+  listBtn.addEventListener("click", () => {
+    directory.classList.add("list-view");
+    directory.classList.remove("grid-view");
+  });
+}

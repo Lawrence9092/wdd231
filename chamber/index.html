@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Harare Chamber of Commerce</title>
+
   <meta name="description" content="Welcome to the Harare Chamber of Commerce — fostering growth and collaboration among Zimbabwe's local businesses.">
   <meta name="author" content="Lawrence Ngwenya">
+
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <header>
     <div class="logo-title">
@@ -29,19 +32,44 @@
   </header>
 
   <main>
-    <h2>Welcome to the Harare Chamber of Commerce</h2>
-    <p>We connect, support, and empower businesses in Zimbabwe’s capital city through networking, advocacy, and development initiatives.</p>
 
-    <section>
-      <h3>Our Mission</h3>
-      <p>To foster economic growth and strengthen the Harare business community through collaboration and innovation.</p>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <img src="images/harare-hero.jpg" alt="Harare city skyline" class="hero-img">
+      <div class="hero-text">
+        <h2>Strengthening Harare's Business Community</h2>
+        <a href="join.html" class="cta-button">Join the Chamber</a>
+      </div>
     </section>
 
-    <section>
-      <h3>Join the Chamber</h3>
-      <p>Become part of a vibrant community of entrepreneurs and organizations driving the future of Harare’s economy.</p>
-      <a href="directory.html" class="button">Explore Business Directory</a>
+    <!-- CURRENT EVENTS -->
+    <section class="events">
+      <h3>Upcoming Events</h3>
+      <ul>
+        <li><strong>Business Networking Breakfast</strong> – March 12, 2025</li>
+        <li><strong>Harare Small Business Expo</strong> – April 5, 2025</li>
+        <li><strong>Women in Business Forum</strong> – May 18, 2025</li>
+      </ul>
     </section>
+
+    <!-- WEATHER -->
+    <section class="weather">
+      <h3>Current Weather</h3>
+      <p><span id="weather-temp"></span></p>
+      <p><span id="weather-description"></span></p>
+
+      <h4>3-Day Forecast</h4>
+      <ul id="forecast"></ul>
+    </section>
+
+    <!-- SPOTLIGHTS -->
+    <section class="spotlights">
+      <h3>Business Spotlights</h3>
+      <div id="spotlight-container" class="spotlight-grid">
+        <!-- Injected via spotlights.js -->
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -50,6 +78,9 @@
     <p>Last modified: <span id="lastModified"></span></p>
   </footer>
 
-  <script src="js/js/scripts.js"></script>
+  <!-- SCRIPTS -->
+  <script src="js/scripts.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/spotlights.js"></script>
 </body>
 </html>
