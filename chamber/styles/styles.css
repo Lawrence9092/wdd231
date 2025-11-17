@@ -2,8 +2,8 @@
    Base Styles & Variables
 ========================= */
 :root {
-  --primary-green: #007f4f;
-  --secondary-yellow: #f7c948;
+  --secondary-yellow: #E1B500; /* darker */
+  --primary-green: #006B45; /* slightly darker */
   --white: #ffffff;
   --text-dark: #222;
 }

@@ -6,15 +6,24 @@
   <title>Business Directory | Harare Chamber of Commerce</title>
   <meta name="description" content="Official directory of the Harare Chamber of Commerce — connecting local businesses, organizations, and entrepreneurs in Zimbabwe's capital.">
   <meta name="author" content="Lawrence Ngwenya">
+  <meta property="og:title" content="Harare Chamber of Commerce Business Directory">
+  <meta property="og:description" content="Discover trusted businesses, services, and organizations across Harare. Browse the official Harare Chamber of Commerce directory.">
+  <meta property="og:image" content="https://lawrence9092.github.io/wdd231/chamber/images/hero.jpg">
+  <meta property="og:url" content="https://lawrence9092.github.io/wdd231/chamber/directory.html">
+
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
 
   <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/base.css">
 </head>
 
 <body>
@@ -22,7 +31,7 @@
   <header>
     <div class="logo-title">
       <img src="images/chamberofcommerce.png" alt="Harare Chamber of Commerce logo" class="logo">
-      <h1>Harare Chamber of Commerce</h1>
+      <p class="site-title">Harare Chamber of Commerce</p>
     </div>
 
     <nav class="main-nav">
@@ -46,7 +55,7 @@
   <!-- =============== END HERO SECTION =============== -->
 
   <main>
-    <h2>Business Directory</h2>
+    <h1>Business Directory</h1>
     <p>Select your view preference:</p>
     <div class="view-toggle">
       <button id="gridView">Grid View</button>
@@ -79,6 +88,6 @@
   </footer>
 
   <!-- JavaScript -->
-  <script src="js/js/scripts.js"></script>
+  <script src="scripts/scripts.js" defer></script>
 </body>
 </html>
