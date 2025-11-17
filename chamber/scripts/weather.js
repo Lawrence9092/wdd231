@@ -1,4 +1,4 @@
-const apiKey = "YOUR_API_KEY_HERE";
+const apiKey = "0c130004afc989ada1970b65328e9d3c";
 const city = "Harare";
 const weatherTemp = document.getElementById("weather-temp");
 const weatherDescription = document.getElementById("weather-description");
