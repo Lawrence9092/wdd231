@@ -41,7 +41,7 @@ function getRandomMembers(members, min, max) {
 
 // Function to display the spotlight members
 function displaySpotlights(members) {
-  const spotlightContainer = document.getElementById("spotlights"); // This is the container for spotlight cards
+  const spotlightContainer = document.getElementById("spotlight-container"); // Corrected ID
   spotlightContainer.innerHTML = ""; // Clear any previous spotlights
 
   members.forEach(member => {
@@ -64,6 +64,10 @@ function displaySpotlights(members) {
     spotlightContainer.appendChild(card);
   });
 }
+
+// Run the function when the page loads
+window.onload = getSpotlightMembers;
+
 
 // Run the function when the page loads
 window.onload = getSpotlightMembers;
