@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join | Harare Chamber of Commerce</title>
+  <meta name="description" content="Apply for membership in the Harare Chamber of Commerce." />
+  <meta name="author" content="Lawrence Ngwenya" />
+
+  <!-- site styles (existing) -->
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+
+  <!-- Page-specific styles for form, cards, modals & animation -->
+  <style>
+    /* Layout: two-column on wider screens */
+    main.join-main {
+      width: 90%;
+      max-width: 1100px;
+      margin: 1.5rem auto;
+      display: block;
+      gap: 2rem;
+    }
+
+    .join-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    /* On larger screens place the membership cards to the right */
+    @media (min-width: 900px) {
+      .join-wrapper {
+        grid-template-columns: 1fr 360px;
+      }
+    }
+
+    /* Form card */
+    .form-card {
+      padding: 1.25rem;
+      border-radius: 10px;
+      background: var(--white);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    label.form-row {
+      display: block;
+      margin-bottom: 0.9rem;
+      font-size: 0.95rem;
+    }
+
+    label.form-row span.label-text {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-weight: 600;
+      color: var(--primary-green);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    textarea { min-height: 120px; resize: vertical; }
+
+    .form-actions {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    input[type="submit"] {
+      background: var(--primary-green);
+      color: var(--white);
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    input[type="submit"]:focus,
+    input[type="submit"]:hover {
+      opacity: 0.95;
+    }
+
+    /* Membership cards panel */
+    .membership-panel {
+      padding: 1.25rem;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #ffffff, #f7f9f7);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+
+    .membership-cards {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .membership-card {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #e6e6e6;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      text-align: left;
+      transform-origin: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      /* initial animation state */
+      opacity: 0;
+      transform: translateY(18px);
+      animation: cardIn 700ms ease forwards;
+    }
+
+    .membership-card h4 { margin: 0; color: var(--primary-green); }
+    .membership-card p { margin: 0; font-size: 0.95rem; color: #333; }
+
+    .membership-card a.info-link {
+      margin-top: auto;
+      align-self: flex-start;
+      text-decoration: none;
+      color: var(--secondary-yellow);
+      font-weight: 700;
+    }
+
+    /* stagger animation */
+    .membership-card:nth-child(1) { animation-delay: 160ms; }
+    .membership-card:nth-child(2) { animation-delay: 340ms; }
+    .membership-card:nth-child(3) { animation-delay: 520ms; }
+    .membership-card:nth-child(4) { animation-delay: 700ms; }
+
+    @keyframes cardIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Dialog (modal) styling */
+    dialog {
+      border: none;
+      border-radius: 8px;
+      padding: 1.1rem 1.25rem;
+      width: min(520px, 94%);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    }
+
+    dialog::backdrop {
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(2px);
+    }
+
+    .dialog-header {
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .dialog-close {
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: var(--primary-green);
+    }
+
+    /* ensure keyboard focus outline */
+    :focus { outline: 3px solid rgba(0,107,69,0.15); outline-offset: 2px; }
+
+    /* small layout tweaks */
+    .hint { font-size: 0.9rem; color: #555; margin-bottom: 0.6rem; }
+  </style>
+</head>
+<body>
+  <!-- Header (copied from Directory structure) -->
+  <header>
+    <div class="logo-title">
+      <img src="images/chamberofcommerce.png" alt="Harare Chamber of Commerce logo" class="logo">
+      <p class="site-title">Harare Chamber of Commerce</p>
+    </div>
+
+    <nav class="main-nav">
+      <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero (text only) -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Join the Harare Chamber of Commerce</h2>
+      <p>Apply for membership and gain access to exclusive benefits for businesses in Harare.</p>
+    </div>
+  </section>
+
+  <main class="join-main">
+    <div class="join-wrapper">
+
+      <!-- FORM (left column on large screens) -->
+      <section class="form-card" aria-labelledby="join-heading">
+        <h3 id="join-heading">Membership Application</h3>
+        <p class="hint">All required fields are marked. Your application will be submitted to our membership team.</p>
+
+        <!-- form: GET to thankyou.html -->
+        <form id="joinForm" method="get" action="thankyou.html" novalidate>
+          <!-- FIRST NAME -->
+          <label class="form-row">
+            <span class="label-text">First name <span aria-hidden="true">*</span></span>
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              title="Applicant's first name"
+              autocomplete="given-name"
+              required
+              aria-required="true"
+              />
+          </label>
+
+          <!-- LAST NAME -->
+          <label class="form-row">
+            <span class="label-text">Last name <span aria-hidden="true">*</span></span>
+            <input
+              type="text"
+              name="lastName"
+              id="lastName"
+              title="Applicant's last name"
+              autocomplete="family-name"
+              required
+              aria-required="true"
+            />
+          </label>
+
+          <!-- ORGANIZATIONAL TITLE -->
+          <label class="form-row">
+            <span class="label-text">Organizational title</span>
+            <input
+              type="text"
+              name="orgTitle"
+              id="orgTitle"
+              title="Title within the organization (min 7 characters — letters, hyphens and spaces only)"
+              autocomplete="organization-title"
+              pattern="^[A-Za-z\s-]{7,}$"
+              placeholder="e.g. Senior Manager"
+            />
+            <small class="hint">Letters, spaces and hyphens only; minimum 7 characters.</small>
+          </label>
+
+          <!-- EMAIL -->
+          <label class="form-row">
+            <span class="label-text">Email address <span aria-hidden="true">*</span></span>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              title="Applicant's email address"
+              autocomplete="email"
+              placeholder="example@business.co.zw"
+              required
+              aria-required="true"
+            />
+          </label>
+
+          <!-- MOBILE PHONE -->
+          <label class="form-row">
+            <span class="label-text">Mobile phone <span aria-hidden="true">*</span></span>
+            <input
+              type="tel"
+              name="mobile"
+              id="mobile"
+              title="Applicant's mobile phone number"
+              autocomplete="tel"
+              placeholder="+263 77 123 4567"
+              required
+              aria-required="true"
+            />
+          </label>
+
+          <!-- BUSINESS / ORGANIZATION NAME -->
+          <label class="form-row">
+            <span class="label-text">Business / Organization name <span aria-hidden="true">*</span></span>
+            <input
+              type="text"
+              name="organization"
+              id="organization"
+              title="Business or organization name"
+              autocomplete="organization"
+              required
+              aria-required="true"
+            />
+          </label>
+
+          <!-- MEMBERSHIP LEVEL -->
+          <label class="form-row">
+            <span class="label-text">Membership level</span>
+            <select name="membership" id="membership" title="Choose a membership level" required>
+              <option value="np">NP Membership (Non-Profit)</option>
+              <option value="bronze">Bronze Membership</option>
+              <option value="silver">Silver Membership</option>
+              <option value="gold">Gold Membership</option>
+            </select>
+          </label>
+
+          <!-- ORGANIZATION DESCRIPTION -->
+          <label class="form-row">
+            <span class="label-text">Organization description</span>
+            <textarea name="description" id="description" title="Brief description of the organization"></textarea>
+          </label>
+
+          <!-- HIDDEN TIMESTAMP -->
+          <input type="hidden" name="timestamp" id="timestamp" />
+
+          <!-- SUBMIT -->
+          <div class="form-actions">
+            <input type="submit" value="Submit Application" />
+            <p class="hint" aria-hidden="true">You will be redirected to a confirmation page after submission.</p>
+          </div>
+        </form>
+      </section>
+
+      <!-- MEMBERSHIP CARDS (right column on large screens / below form on small screens) -->
+      <aside class="membership-panel" aria-labelledby="membership-heading">
+        <h3 id="membership-heading">Membership Levels</h3>
+        <p class="hint">Click "More info" to learn about benefits.</p>
+
+        <div class="membership-cards">
+          <article class="membership-card" aria-label="NP Membership">
+            <h4>NP Membership</h4>
+            <p>No fee — for registered non-profit organizations. Includes listing, event updates.</p>
+            <a href="#" class="info-link" data-dialog="dialog-np">More info</a>
+          </article>
+
+          <article class="membership-card" aria-label="Bronze Membership">
+            <h4>Bronze Membership</h4>
+            <p>Entry-level benefits: basic listing and event invites.</p>
+            <a href="#" class="info-link" data-dialog="dialog-bronze">More info</a>
+          </article>
+
+          <article class="membership-card" aria-label="Silver Membership">
+            <h4>Silver Membership</h4>
+            <p>Added benefits: training discounts and spotlight rotations.</p>
+            <a href="#" class="info-link" data-dialog="dialog-silver">More info</a>
+          </article>
+
+          <article class="membership-card" aria-label="Gold Membership">
+            <h4>Gold Membership</h4>
+            <p>Premium benefits: prime spotlights, advertising and event sponsorship priority.</p>
+            <a href="#" class="info-link" data-dialog="dialog-gold">More info</a>
+          </article>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Modals using <dialog> for accessibility -->
+  <dialog id="dialog-np" aria-labelledby="np-title">
+    <div class="dialog-header">
+      <h4 id="np-title">NP Membership — Benefits</h4>
+      <button class="dialog-close" data-close>✕</button>
+    </div>
+    <p>No fee. Benefits include: directory listing, newsletter, invitations to community events and access to resource materials.</p>
+  </dialog>
+
+  <dialog id="dialog-bronze" aria-labelledby="bronze-title">
+    <div class="dialog-header">
+      <h4 id="bronze-title">Bronze Membership — Benefits</h4>
+      <button class="dialog-close" data-close>✕</button>
+    </div>
+    <p>Bronze benefits: standard directory listing, event invites, access to member-only events, and basic promotional opportunities.</p>
+  </dialog>
+
+  <dialog id="dialog-silver" aria-labelledby="silver-title">
+    <div class="dialog-header">
+      <h4 id="silver-title">Silver Membership — Benefits</h4>
+      <button class="dialog-close" data-close>✕</button>
+    </div>
+    <p>Silver benefits: everything in Bronze plus training discounts, periodic spotlight placement, and promotional support.</p>
+  </dialog>
+
+  <dialog id="dialog-gold" aria-labelledby="gold-title">
+    <div class="dialog-header">
+      <h4 id="gold-title">Gold Membership — Benefits</h4>
+      <button class="dialog-close" data-close>✕</button>
+    </div>
+    <p>Gold benefits: premium spotlight positions, priority sponsorships, featured listings on the home page, and invitations to exclusive business forums.</p>
+  </dialog>
+
+  <!-- Footer (matches directory) -->
+  <footer>
+    <p>Contact: info@hararechamber.co.zw | Phone: +263 775 563 266</p>
+    <p>© <span id="year"></span> Harare Chamber of Commerce | Developed by Lawrence Ngwenya | WDD 231</p>
+    <p>Last modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <!-- Existing site script inclusion (menu + footer) -->
+  <script src="scripts/scripts.js" defer></script>
+
+  <!-- Page-specific JS -->
+  <script>
+    // Auto-fill footer fields (if scripts.js didn't already)
+    const yearSpan = document.getElementById("year");
+    const lastModifiedSpan = document.getElementById("lastModified");
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+    if (lastModifiedSpan) lastModifiedSpan.textContent = document.lastModified;
+
+    // Fill hidden timestamp in ISO format (readable)
+    const timestampInput = document.getElementById("timestamp");
+    if (timestampInput) {
+      const now = new Date();
+      // example format: 2025-03-01T14:32:00+02:00
+      timestampInput.value = now.toISOString();
+    }
+
+    // Modal dialog open/close handlers
+    document.querySelectorAll('.info-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const dialogId = link.dataset.dialog;
+        const dialog = document.getElementById(dialogId);
+        if (dialog) {
+          // Use showModal for proper modal behaviour on supported browsers
+          if (typeof dialog.showModal === 'function') {
+            dialog.showModal();
+            // Move focus to the dialog close button for accessibility
+            const closeBtn = dialog.querySelector('[data-close]');
+            if (closeBtn) closeBtn.focus();
+          } else {
+            // Fallback: toggle attribute for older browsers
+            dialog.setAttribute('open', '');
+          }
+        }
+      });
+    });
+
+    // Close dialog buttons and ESC handling
+    document.querySelectorAll('dialog [data-close]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const dialog = e.target.closest('dialog');
+        if (dialog && typeof dialog.close === 'function') dialog.close();
+      });
+    });
+
+    // Close on backdrop click (for browsers that support event)
+    document.querySelectorAll('dialog').forEach(d => {
+      d.addEventListener('click', (e) => {
+        const rect = d.getBoundingClientRect();
+        const isInDialog = (
+          e.clientX >= rect.left && e.clientX <= rect.right &&
+          e.clientY >= rect.top && e.clientY <= rect.bottom
+        );
+        if (!isInDialog && typeof d.close === 'function') {
+          d.close();
+        }
+      });
+
+      // close on Escape
+      d.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && typeof d.close === 'function') d.close();
+      });
+    });
+
+    // Accessibility: keep a logical tab order - ensure dialog buttons are reachable
+    // No special trap implemented (keep simple for assignment). Modern browsers handle focus in modal dialogs.
+  </script>
+</body>
+</html>
