@@ -1,17 +1,17 @@
-// simple accessible modal: toggles aria-hidden and traps focus minimally
+// modal.mjs — accessible modal initializer (exposes window.appModal.openModal)
 export function initModal(){
   const modal = document.getElementById('oppModal');
   if (!modal) return;
 
   const closeBtn = modal.querySelector('.modal-close');
-  const modalTitle = modal.querySelector('#modalTitle');
-  const modalBody = modal.querySelector('#modalBody');
+  const titleEl = modal.querySelector('#modalTitle');
+  const bodyEl = modal.querySelector('#modalBody');
 
-  function openModal(title, body){
-    modalTitle.textContent = title;
-    modalBody.textContent = body;
+  function openModal(title = '', body = ''){
+    titleEl.textContent = title;
+    bodyEl.textContent = body;
     modal.setAttribute('aria-hidden','false');
-    // save previously focused
+    // store focus
     modal._prevFocus = document.activeElement;
     closeBtn.focus();
     document.body.style.overflow = 'hidden';
@@ -23,13 +23,8 @@ export function initModal(){
   }
 
   closeBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
-  });
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal(); });
 
-  // expose open/close globally for other modules
   window.appModal = { openModal, closeModal };
 }

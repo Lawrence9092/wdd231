@@ -1,26 +1,27 @@
+/* opportunities.css — grid, cards, controls, modal (mobile-first) */
+
+.controls{display:flex;gap:0.6rem;flex-wrap:wrap;align-items:center;margin:0.75rem 0}
+.controls label{font-weight:600}
+.controls select{padding:0.45rem;border-radius:8px;border:1px solid #dcdcdc}
+
 /* grid */
 .opportunity-grid{display:grid;grid-template-columns:1fr;gap:1rem;padding:1rem 0}
-.opp-card{background:var(--safe-bg);padding:1rem;border-radius:8px;border:1px solid #e6e6e6;display:flex;flex-direction:column;gap:0.5rem}
+.opp-card{background:var(--card-bg);padding:0.8rem;border-radius:8px;border:1px solid #e6e6e6;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:0.6rem}
 .opp-card img{width:100%;height:180px;object-fit:cover;border-radius:6px}
-.opp-meta{display:flex;justify-content:space-between;align-items:center;gap:0.5rem;flex-wrap:wrap}
-.opp-card h3{margin:0;font-size:1.125rem}
-.opp-card p{margin:0;color:var(--muted);font-size:0.95rem}
-.opp-actions{display:flex;gap:0.5rem;margin-top:0.5rem}
+.opp-meta{display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:space-between;font-size:0.95rem;color:var(--muted)}
+.opp-actions{display:flex;gap:0.5rem;margin-top:0.6rem;align-items:center}
 
 /* modal */
-.modal{position:fixed;left:0;top:0;right:0;bottom:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:1000;padding:1rem}
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);padding:1rem;z-index:2000}
 .modal[aria-hidden="false"]{display:flex}
-.modal-content{background:#fff;padding:1.25rem;border-radius:8px;max-width:700px;width:100%}
-.modal-close{background:transparent;border:0;font-size:1.5rem;position:absolute;right:1rem;top:1rem}
+.modal-content{background:#fff;padding:1.25rem;border-radius:10px;max-width:720px;width:100%;position:relative;box-shadow:var(--shadow)}
+.modal-close{position:absolute;right:0.6rem;top:0.4rem;background:transparent;border:0;font-size:1.4rem;cursor:pointer}
 
-/* controls */
-.controls{display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;margin:1rem 0}
-.controls select{padding:0.4rem;border-radius:6px;border:1px solid #ccc}
-
-/* desktop grid */
+/* larger screens */
 @media(min-width:700px){
   .opportunity-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(min-width:1000px){
   .opportunity-grid{grid-template-columns:repeat(3,1fr)}
 }
+

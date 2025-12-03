@@ -1,7 +1,16 @@
+/* form.css — styling specifically for form pages */
+
 .container{max-width:900px}
-form{background:var(--safe-bg);padding:1rem;border-radius:8px;border:1px solid #e6e6e6}
-label{display:block;margin-top:0.8rem;font-weight:600}
-input[type="text"],input[type="email"],input[type="date"],select,textarea{width:100%;padding:0.6rem;border-radius:6px;border:1px solid #ccc;margin-top:0.3rem}
-fieldset{border:1px solid #ddd;padding:0.5rem;border-radius:6px}
-legend{font-weight:700}
+form{background:var(--card-bg);padding:1rem;border-radius:8px;border:1px solid #e6e6e6;box-shadow:var(--shadow)}
+.form-row{display:flex;gap:0.6rem;align-items:center;margin-top:0.8rem}
+input[type="submit"], .btn { font-weight:700; }
+
+/* rating stars / radio spacing */
+fieldset label{display:inline-flex;align-items:center;gap:0.4rem;margin-right:0.6rem}
+
+/* responsive tweaks */
+@media(min-width:700px){
+  .form-row{justify-content:flex-start}
+}
+
 

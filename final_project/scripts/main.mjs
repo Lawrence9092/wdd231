@@ -1,32 +1,36 @@
+// main.mjs — header nav toggle, footer year, minimal theme persistence
 import { initModal } from './modal.mjs';
 
+// init DOM when ready
 document.addEventListener('DOMContentLoaded', () => {
   // footer year
   const yearSpan = document.getElementById('footerYear');
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-  // nav toggle (hamburger) - accessible
+  // nav toggles (multiple pages may have button)
   document.querySelectorAll('#navToggle').forEach(btn => {
     btn.addEventListener('click', () => {
+      // find nearest primaryNav in the document
       const nav = document.querySelector('#primaryNav');
+      if (!nav) return;
       const expanded = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!expanded));
-      if (nav) nav.style.display = expanded ? '' : 'block';
+      // toggle nav visibility on small screens
+      nav.style.display = expanded ? '' : 'block';
     });
   });
 
-  // restore display on resize
+  // on resize restore nav display for large screens
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 800) {
-      document.querySelectorAll('#primaryNav').forEach(nav => nav.style.display = '');
-      document.querySelectorAll('#navToggle').forEach(btn => btn.setAttribute('aria-expanded','false'));
+      document.querySelectorAll('#primaryNav').forEach(n => n.style.display = '');
+      document.querySelectorAll('#navToggle').forEach(b => b.setAttribute('aria-expanded','false'));
     }
   });
 
-  // localStorage theme example (persisted)
-  const saved = localStorage.getItem('siteTheme');
-  if (saved === 'dark') document.body.classList.add('dark-mode');
+  // restore theme if stored (example)
+  if (localStorage.getItem('siteTheme') === 'dark') document.body.classList.add('dark-mode');
 
-  // init modal utility (focus trap etc)
-  initModal();
+  // init modal utilities (if present)
+  if (typeof initModal === 'function') initModal();
 });
