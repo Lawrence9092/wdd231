@@ -1,0 +1,7 @@
+.container{max-width:900px}
+form{background:var(--safe-bg);padding:1rem;border-radius:8px;border:1px solid #e6e6e6}
+label{display:block;margin-top:0.8rem;font-weight:600}
+input[type="text"],input[type="email"],input[type="date"],select,textarea{width:100%;padding:0.6rem;border-radius:6px;border:1px solid #ccc;margin-top:0.3rem}
+fieldset{border:1px solid #ddd;padding:0.5rem;border-radius:6px}
+legend{font-weight:700}
+

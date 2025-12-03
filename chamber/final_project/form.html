@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Product Review — Business & Investment Resource Hub</title>
+  <meta name="description" content="Submit a product review. Valid submissions are shown on a review confirmation page via URL search params."/>
+  <meta name="author" content="Lawrence Ngwenya" />
+  <link rel="icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="styles/form.css" />
+</head>
+<body>
+  <a class="skip-link" href="#reviewForm">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Business & Investment Resource Hub</a>
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <nav id="primaryNav" class="primary-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="opportunities.html">Opportunities</a></li>
+          <li><a href="form.html" aria-current="page">Product Review</a></li>
+          <li><a href="contacts.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="reviewForm" class="container">
+    <h1>Submit a Product Review</h1>
+
+    <form id="productForm" method="get" action="review.html">
+      <label for="productName">Product Name</label>
+      <select id="productName" name="productName" required>
+        <option value="">Select a product...</option>
+      </select>
+
+      <fieldset>
+        <legend>Overall Rating</legend>
+        <label><input type="radio" name="rating" value="5" required> 5</label>
+        <label><input type="radio" name="rating" value="4"> 4</label>
+        <label><input type="radio" name="rating" value="3"> 3</label>
+        <label><input type="radio" name="rating" value="2"> 2</label>
+        <label><input type="radio" name="rating" value="1"> 1</label>
+      </fieldset>
+
+      <label for="installDate">Date of Installation</label>
+      <input id="installDate" name="installDate" type="date" required />
+
+      <fieldset>
+        <legend>Useful Features</legend>
+        <label><input type="checkbox" name="features" value="Easy Setup"> Easy Setup</label>
+        <label><input type="checkbox" name="features" value="Durability"> Durability</label>
+        <label><input type="checkbox" name="features" value="Value for Money"> Value for Money</label>
+        <label><input type="checkbox" name="features" value="Performance"> Performance</label>
+      </fieldset>
+
+      <label for="writtenReview">Written Review (optional)</label>
+      <textarea id="writtenReview" name="writtenReview" rows="4" placeholder="Write your thoughts..."></textarea>
+
+      <label for="username">Your Name (optional)</label>
+      <input id="username" name="username" type="text" placeholder="Enter your name">
+
+      <div class="form-row">
+        <input class="btn" type="submit" value="Submit Review">
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="footerYear"></span> Lawrence Ngwenya</p>
+    </div>
+  </footer>
+
+  <script type="module" src="scripts/form-handler.mjs"></script>
+</body>
+</html>

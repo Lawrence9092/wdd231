@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Review Confirmation</title>
+  <meta name="description" content="Confirmation showing submitted review data (form action page)." />
+  <meta name="author" content="Lawrence Ngwenya" />
+  <link rel="icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="styles/form.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Business & Investment Resource Hub</a>
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <nav id="primaryNav" class="primary-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="opportunities.html">Opportunities</a></li>
+          <li><a href="form.html">Product Review</a></li>
+          <li><a href="contacts.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Thank You — Review Submitted</h1>
+    <div id="confirmation"></div>
+    <p><a href="form.html">Submit another review</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="footerYear"></span> Lawrence Ngwenya</p>
+    </div>
+  </footer>
+
+  <script type="module">
+    // show URLSearchParams on this page (valid form entries)
+    const params = new URLSearchParams(location.search);
+    const target = document.getElementById('confirmation');
+
+    if (!params.toString()) {
+      target.innerHTML = '<p>No submission detected. Please use the form to submit a review.</p>';
+    } else {
+      const entries = Array.from(params.entries());
+      // Convert checkbox multi-values
+      const data = {};
+      for (const [key, value] of entries) {
+        if (data[key]) {
+          if (Array.isArray(data[key])) data[key].push(value);
+          else data[key] = [data[key], value];
+        } else data[key] = value;
+      }
+
+      // user-friendly display
+      target.innerHTML = `
+        <h2>Submission details</h2>
+        <ul>
+          ${Object.keys(data).map(k => `<li><strong>${k}:</strong> ${Array.isArray(data[k]) ? data[k].join(', ') : data[k]}</li>`).join('')}
+        </ul>
+      `;
+
+      // increase reviewCount in localStorage
+      const count = parseInt(localStorage.getItem('reviewCount') || '0', 10) + 1;
+      localStorage.setItem('reviewCount', count);
+    }
+  </script>
+</body>
+</html>

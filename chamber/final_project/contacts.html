@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Business & Investment Resource Hub</title>
+  <meta name="description" content="Contact page for inquiries, partnerships, and student project attributions." />
+  <meta name="author" content="Lawrence Ngwenya" />
+  <link rel="icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+</head>
+<body>
+  <a class="skip-link" href="#contactForm">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Business & Investment Resource Hub</a>
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <nav id="primaryNav" class="primary-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="opportunities.html">Opportunities</a></li>
+          <li><a href="form.html">Product Review</a></li>
+          <li><a href="contacts.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contactForm" class="container">
+    <h1>Contact</h1>
+    <p>If you’d like to collaborate, provide feedback, or offer opportunities please use the form below.</p>
+
+    <form id="contactUs" method="post" action="#" novalidate>
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required autocomplete="name">
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required autocomplete="email">
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <div class="form-row">
+        <button type="submit" class="btn">Send</button>
+        <button type="reset" class="btn-outline">Reset</button>
+      </div>
+    </form>
+
+    <section aria-labelledby="ways-heading">
+      <h2 id="ways-heading">Other ways to reach us</h2>
+      <ul>
+        <li>Email: <a href="mailto:lawrence@example.com">lawrence@example.com</a></li>
+        <li>References page: <a href="references.html">References & Attributions</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="footerYear"></span> Lawrence Ngwenya</p>
+      <p><a href="references.html">References</a></p>
+    </div>
+  </footer>
+
+  <script type="module" src="scripts/main.mjs"></script>
+</body>
+</html>
