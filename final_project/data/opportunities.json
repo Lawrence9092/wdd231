@@ -1,17 +1,138 @@
 [
-  {"id":"opp1","title":"Commercial Farming Cooperative","category":"Agriculture","location":"Mashonaland East","investmentUSD":25000,"description":"Cooperative model empowering smallholder farmers with shared equipment and training."},
-  {"id":"opp2","title":"Affordable Housing Units","category":"Real Estate","location":"Harare","investmentUSD":120000,"description":"Low-cost housing development for first-time buyers with financing partners."},
-  {"id":"opp3","title":"Solar Mini-Grid Project","category":"Energy","location":"Midlands","investmentUSD":60000,"description":"Off-grid solar systems for rural electrification."},
-  {"id":"opp4","title":"Irrigation Pump Distribution","category":"Agriculture","location":"Manicaland","investmentUSD":8000,"description":"Local assembly and supply of durable irrigation pumps for smallholder farmers."},
-  {"id":"opp5","title":"Agro-processing Unit","category":"Manufacturing","location":"Bulawayo","investmentUSD":45000,"description":"Processing of local crops to add value and extend shelf life."},
-  {"id":"opp6","title":"Cold Storage Facility","category":"Logistics","location":"Harare","investmentUSD":90000,"description":"Short-term cold storage near major markets for produce and meat."},
-  {"id":"opp7","title":"Tech Training Hub","category":"Education","location":"Harare","investmentUSD":15000,"description":"Affordable coding and digital skills training for youth."},
-  {"id":"opp8","title":"Shared Workshop Space","category":"Manufacturing","location":"Mutare","investmentUSD":12000,"description":"Tool library and shared workspace for artisans and small manufacturers."},
-  {"id":"opp9","title":"Eco-Lodge & Tourism","category":"Tourism","location":"Victoria Falls","investmentUSD":30000,"description":"Small eco-lodge targeting eco-tourists and bird-watchers."},
-  {"id":"opp10","title":"Waste-to-Energy Pilot","category":"Energy","location":"Harare","investmentUSD":110000,"description":"Pilot converting organic waste into biogas for local use."},
-  {"id":"opp11","title":"Medical Supplies Distribution","category":"Health","location":"Gweru","investmentUSD":20000,"description":"Logistics and distribution of essential medical supplies to clinics."},
-  {"id":"opp12","title":"Urban Farming Modules","category":"Agriculture","location":"Harare","investmentUSD":5000,"description":"Modular urban farming kits for households and schools."},
-  {"id":"opp13","title":"Solar Water Heating","category":"Energy","location":"Bulawayo","investmentUSD":7000,"description":"Installation and maintenance of solar water heating systems."},
-  {"id":"opp14","title":"Small-Scale Textile Workshop","category":"Manufacturing","location":"Chitungwiza","investmentUSD":18000,"description":"Local garment production for domestic and export markets."},
-  {"id":"opp15","title":"Transport & Logistics Startup","category":"Logistics","location":"Harare","investmentUSD":25000,"description":"Small freight consolidation and last-mile delivery for SMEs."}
+  {
+    "id": 1,
+    "title": "Commercial Farming Cooperative",
+    "category": "Agriculture",
+    "location": "Mashonaland East",
+    "investment": 25000,
+    "description": "Cooperative model empowering smallholder farmers with shared equipment and training.",
+    "image": "images/agriculture1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Affordable Housing Units",
+    "category": "Real Estate",
+    "location": "Harare",
+    "investment": 120000,
+    "description": "Low-cost housing development for first-time buyers with financing partners.",
+    "image": "images/realestate1.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Solar Mini-Grid Project",
+    "category": "Energy",
+    "location": "Midlands",
+    "investment": 60000,
+    "description": "Off-grid solar systems for rural electrification.",
+    "image": "images/energy1.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Irrigation Pump Distribution",
+    "category": "Agriculture",
+    "location": "Manicaland",
+    "investment": 8000,
+    "description": "Local assembly and supply of durable irrigation pumps for smallholder farmers.",
+    "image": "images/agriculture2.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Agro-processing Unit",
+    "category": "Manufacturing",
+    "location": "Bulawayo",
+    "investment": 45000,
+    "description": "Processing of local crops to add value and extend shelf life.",
+    "image": "images/manufacturing1.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Cold Storage Facility",
+    "category": "Logistics",
+    "location": "Harare",
+    "investment": 90000,
+    "description": "Short-term cold storage near major markets for produce and meat.",
+    "image": "images/logistics1.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Tech Training Hub",
+    "category": "Education",
+    "location": "Harare",
+    "investment": 15000,
+    "description": "Affordable coding and digital skills training for youth.",
+    "image": "images/education1.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Shared Workshop Space",
+    "category": "Manufacturing",
+    "location": "Mutare",
+    "investment": 12000,
+    "description": "Tool library and shared workspace for artisans and small manufacturers.",
+    "image": "images/manufacturing2.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Eco-Lodge & Tourism",
+    "category": "Tourism",
+    "location": "Victoria Falls",
+    "investment": 30000,
+    "description": "Small eco-lodge targeting eco-tourists and bird-watchers.",
+    "image": "images/tourism1.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Waste-to-Energy Pilot",
+    "category": "Energy",
+    "location": "Harare",
+    "investment": 110000,
+    "description": "Pilot converting organic waste into biogas for local use.",
+    "image": "images/energy2.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Medical Supplies Distribution",
+    "category": "Health",
+    "location": "Gweru",
+    "investment": 20000,
+    "description": "Logistics and distribution of essential medical supplies to clinics.",
+    "image": "images/health1.jpg"
+  },
+  {
+    "id": 12,
+    "title": "Urban Farming Modules",
+    "category": "Agriculture",
+    "location": "Harare",
+    "investment": 5000,
+    "description": "Modular urban farming kits for households and schools.",
+    "image": "images/agriculture3.jpg"
+  },
+  {
+    "id": 13,
+    "title": "Solar Water Heating",
+    "category": "Energy",
+    "location": "Bulawayo",
+    "investment": 7000,
+    "description": "Installation and maintenance of solar water heating systems.",
+    "image": "images/energy3.jpg"
+  },
+  {
+    "id": 14,
+    "title": "Small-Scale Textile Workshop",
+    "category": "Manufacturing",
+    "location": "Chitungwiza",
+    "investment": 18000,
+    "description": "Local garment production for domestic and export markets.",
+    "image": "images/manufacturing3.jpg"
+  },
+  {
+    "id": 15,
+    "title": "Transport & Logistics Startup",
+    "category": "Logistics",
+    "location": "Harare",
+    "investment": 25000,
+    "description": "Small freight consolidation and last-mile delivery for SMEs.",
+    "image": "images/logistics2.jpg"
+  }
 ]
+
