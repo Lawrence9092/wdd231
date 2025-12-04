@@ -61,28 +61,34 @@
 .hamburger::after { top: 7px; }
 
 /* HERO */
+/* HERO WITH BACKGROUND IMAGE */
 .hero {
+  position: relative;
+  background: url("../images/hero.jpg") center/cover no-repeat;
+  height: 60vh;                /* controls height of hero */
+  min-height: 380px;           /* ensures it’s not too small */
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  padding: 3rem 0;
-  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  color: white;                /* hero text color */
+  text-align: center;
 }
 
-.hero-media img {
-  width: 100%;
-  max-width: 380px;
-  height: auto;
-  border-radius: 10px;
+/* Optional overlay for darkening image */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* adjust darkness */
 }
 
+/* Ensure text is above overlay */
 .hero-content {
-  flex: 1;
-  min-width: 260px;
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
 }
-
-
 
 .cta-row {
   margin-top: 1rem;
@@ -113,13 +119,7 @@
 
 /* RESPONSIVE BREAKPOINT */
 @media (max-width: 768px) {
-  .hero{
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-media img {
-    max-width: 90%;
-  }
+  
   /* MOBILE NAV */
   .nav-toggle {
     display: block;
