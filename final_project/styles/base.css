@@ -1,5 +1,6 @@
-/* base.css — global variables, reset, typography, utilities */
-:root{
+/* base.css — global variables, reset, typography, utilities */ 
+
+:root {
   --primary: #0A8A0A;
   --secondary: #FFD700;
   --accent: #F4D03F;
@@ -13,74 +14,77 @@
   --gap: 1rem;
   --radius: 10px;
   --shadow: 0 4px 12px rgba(0,0,0,0.06);
+
   font-size: 16px;
 }
 
 /* RESET */
-*{ box-sizing: border-box; margin: 0; padding: 0; }
-html, body{ height:100%; }
-body{
-  font-family: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  color: var(--text);
-  background: var(--bg);
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+
+body {
+  font-family: "Open Sans", system-ui, Arial;
   line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* UNIVERSAL CENTERING + CONSISTENCY */
-.container{
+/* LAYOUT BASE */
+.container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 1rem;
-  text-align: center; /* forces center layout globally */
+}
+
+.text-center {
+  text-align: center;
 }
 
 /* HEADINGS */
-h1, h2, h3{
+h1, h2, h3 {
   margin-bottom: 0.75rem;
   font-weight: 700;
 }
 
 /* LINKS */
-a{
+a {
   color: var(--primary);
   text-decoration: none;
 }
-a:hover, a:focus{
+a:hover,
+a:focus {
   text-decoration: underline;
 }
 
 /* BUTTONS */
 .btn,
-.btn-outline{
+.btn-outline {
   display: inline-block;
   padding: 0.6rem 1.2rem;
-  font-weight: 700;
   border-radius: var(--radius);
+  font-weight: 700;
   cursor: pointer;
-  text-align: center;
 }
 
-.btn{
+.btn {
   background: var(--primary);
   color: #fff;
 }
-
-.btn-outline{
-  border: 2px solid var(--primary);
-  color: var(--primary);
-  background: transparent;
-}
-
-.btn:hover{
+.btn:hover {
   background: #066e06;
 }
-.btn-outline:hover{
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+.btn-outline:hover {
   background: var(--primary);
   color: #fff;
 }
 
 /* FORMS */
-input, select, textarea{
+input, select, textarea {
   width: 100%;
   padding: 0.6rem;
   border-radius: var(--radius);
@@ -88,7 +92,7 @@ input, select, textarea{
   margin-bottom: 1rem;
 }
 
-fieldset{
+fieldset {
   border: 1px solid #dcdcdc;
   padding: 1rem;
   border-radius: var(--radius);
@@ -96,41 +100,35 @@ fieldset{
 }
 
 /* FOOTER */
-.site-footer{
-  margin-top: 2.5rem;
-  padding: 2rem 1rem;
+.site-footer {
   background: var(--primary);
   color: #fff;
+  padding: 2rem 1rem;
+  margin-top: 2.5rem;
 }
-.site-footer a{
+
+.site-footer a {
   color: #fff;
   text-decoration: underline;
 }
-.site-footer .container{
-  text-align: center;
+
+/* SKIP LINK FIXED */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+.skip-link:focus {
+  left: 0;
+  top: 0;
 }
 
-/* HEADER GLOBAL FIX (centers content) */
-.site-header .container{
-  text-align: center;
-}
-
-/* SKIP LINK */
-.skip-link{
-  position:absolute;
-  left:-999px;
-  top:auto;
-}
-.skip-link:focus{
-  left: 1rem;
-  top:1rem;
-  background:#fff;
-  padding:0.5rem;
-  z-index:10000;
-}
-
-/* CLEAN SPACING BETWEEN SECTIONS */
-main > section,
-main > div{
-  margin-top: 2rem;
+/* HERO IMAGE */
+.hero-media img {
+  width: 100%;
+  border-radius: var(--radius);
 }
