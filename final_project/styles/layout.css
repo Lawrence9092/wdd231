@@ -62,12 +62,27 @@
 
 /* HERO */
 .hero {
-  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.hero-media img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  border-radius: 10px;
 }
 
 .hero-content {
-  margin-top: 1.5rem;
+  flex: 1;
+  min-width: 260px;
 }
+
+
 
 .cta-row {
   margin-top: 1rem;
@@ -98,7 +113,13 @@
 
 /* RESPONSIVE BREAKPOINT */
 @media (max-width: 768px) {
-
+  .hero{
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-media img {
+    max-width: 90%;
+  }
   /* MOBILE NAV */
   .nav-toggle {
     display: block;
