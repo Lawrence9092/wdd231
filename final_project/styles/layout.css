@@ -193,3 +193,32 @@
   width: 100%;
   box-sizing: border-box;
 }
+
+/* Footer Styles */
+.site-footer {
+  background-color: #2c6e34;  /* Update to match your footer color */
+  color: white;
+  text-align: center;          /* Center the text */
+  padding: 1rem 0;             /* Vertical padding */
+  width: 100%;
+}
+
+.site-footer .container {
+  display: flex;
+  justify-content: center;      /* Centers content horizontally */
+  align-items: center;          /* Vertically align if needed */
+  gap: 1rem;                    /* Adds space between text and links */
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: #d3f9d8; /* Light green for links */
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline; /* Add hover effect */
+}
