@@ -126,3 +126,20 @@
   }
 
 }
+
+/* HEADER FIX */
+.site-header {
+  background-color: var(--primary); /* green header */
+  color: #FFFFFF;                   /* make text white for contrast */
+  box-shadow: var(--shadow);
+}
+
+.site-header .logo,
+.site-header .nav-list a {
+  color: #FFFFFF; /* ensure logo and nav links are white */
+}
+
+.site-header .nav-list a:hover,
+.site-header .nav-list a:focus {
+  color: var(--secondary); /* optional: hover yellow */
+}
