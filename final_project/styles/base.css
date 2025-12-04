@@ -1,9 +1,9 @@
 /* base.css — global variables, reset, typography, utilities */ 
 
 :root {
-  --primary: #0A8A0A;
-  --secondary: #FFD700;
-  --accent: #F4D03F;
+  --primary: #00FF00;   /* Bright Lime Green */
+  --secondary: #FFFF00; /* Yellow */
+  --accent: #FFFFFF;    /* White */
 
   --bg: #ffffff;
   --text: #1a1a1a;
@@ -17,6 +17,7 @@
 
   font-size: 16px;
 }
+
 
 /* RESET */
 * { box-sizing: border-box; margin: 0; padding: 0; }
