@@ -1,11 +1,11 @@
 /* base.css — global variables, reset, typography, utilities */ 
 
 :root {
-  --primary: #00FF00;   /* Bright Lime Green */
-  --secondary: #FFFF00; /* Yellow */
-  --accent: #FFFFFF;    /* White */
+  --primary: #3A5F0B;   /* Primary green (your new hex) */
+  --secondary: #FFFF00; /* Secondary yellow */
+  --accent: #FFFFFF;    /* Accent white */
 
-  --bg: #ffffff;
+  --bg: #FFFFFF;        /* Page background (white) */
   --text: #1a1a1a;
   --muted: #6b6b6b;
   --card-bg: #f8f8f8;
@@ -17,6 +17,7 @@
 
   font-size: 16px;
 }
+
 
 
 /* RESET */
