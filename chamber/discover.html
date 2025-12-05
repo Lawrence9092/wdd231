@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Discover Harare | Harare Chamber of Commerce</title>
+
+  <meta name="description" content="Explore key attractions, cultural landmarks, economic highlights, and unique features of Harare, Zimbabwe’s vibrant capital city.">
+  <meta name="author" content="Lawrence Ngwenya">
+
+  <!-- OpenGraph (Fixed) -->
+  <meta property="og:title" content="Discover Harare – Explore the Heart of Zimbabwe’s Capital">
+  <meta property="og:description" content="Learn about Harare’s culture, business opportunities, attractions, and key places of interest. Perfect for visitors and prospective chamber members.">
+  <meta property="og:image" content="https://lawrence9092.github.io/wdd231/chamber/images/harare-hero.jpg">
+  <meta property="og:url" content="https://lawrence9092.github.io/wdd231/chamber/discover.html">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Google Fonts (Correct Format) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/discover.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo-title">
+      <img src="images/chamberofcommerce.png" alt="Harare Chamber of Commerce logo" class="logo">
+      <h1>Harare Chamber of Commerce</h1>
+    </div>
+
+    <nav class="main-nav">
+      <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <ul id="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="discover.html" class="active">Discover</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="visitor-message" id="visitMessage"></section>
+
+    <h2>Discover Harare</h2>
+    <p>Explore key places of interest, culture, and community highlights from around Harare.</p>
+
+    <!-- Grid container for cards -->
+    <section id="discoverGrid" class="discover-grid">
+      <!-- Cards injected by JS -->
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact: info@hararechamber.co.zw | Phone: +263 775 563 266</p>
+    <p>© <span id="year"></span> Harare Chamber of Commerce | Developed by Lawrence Ngwenya | WDD 231</p>
+    <p>Last modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="scripts/scripts.js"></script>
+
+  <!-- Discover Page Script -->
+  <script type="module">
+    import places from "./data/places.mjs";
+
+    const container = document.getElementById("discoverGrid");
+
+    places.forEach(place => {
+      const card = document.createElement("article");
+      card.classList.add("discover-card");
+
+      card.innerHTML = `
+        <h2>${place.name}</h2>
+        <figure>
+          <img src="${place.image}" alt="${place.name}">
+        </figure>
+        <address>${place.address}</address>
+        <p>${place.description}</p>
+        <button>Learn More</button>
+      `;
+
+      container.appendChild(card);
+    });
+
+    /* -----------------------------
+        Visitor LocalStorage Message
+    ------------------------------ */
+    const visitMessage = document.getElementById("visitMessage");
+    const lastVisit = localStorage.getItem("lastVisit");
+    const now = Date.now();
+
+    if (!lastVisit) {
+      visitMessage.textContent = "Welcome! Let us know if you have any questions.";
+    } else {
+      const diffDays = Math.floor((now - Number(lastVisit)) / (1000 * 60 * 60 * 24));
+
+      if (diffDays < 1) {
+        visitMessage.textContent = "Back so soon! Awesome!";
+      } else if (diffDays === 1) {
+        visitMessage.textContent = "You last visited 1 day ago.";
+      } else {
+        visitMessage.textContent = `You last visited ${diffDays} days ago.`;
+      }
+    }
+
+    localStorage.setItem("lastVisit", now);
+
+  </script>
+
+</body>
+</html>
