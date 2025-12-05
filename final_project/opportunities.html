@@ -4,24 +4,31 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Investment Opportunities — Business & Investment Resource Hub</title>
+
   <meta name="description" content="Curated investment opportunities with details, filters, and save-to-favorites. Data fetched from a local JSON file." />
   <meta name="author" content="Lawrence Ngwenya" />
   <meta property="og:title" content="Investment Opportunities" />
+
+  <!-- Correct favicon path -->
   <link rel="icon" href="images/favicon.ico" />
+
+  <!-- Styles (paths already correct) -->
   <link rel="stylesheet" href="styles/base.css" />
   <link rel="stylesheet" href="styles/opportunities.css" />
-  <link rel="stylesheet" href="styles/layout.css">
-
+  <link rel="stylesheet" href="styles/layout.css" />
 </head>
+
 <body>
   <a class="skip-link" href="#opps">Skip to content</a>
 
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="index.html">Business & Investment Resource Hub</a>
+
       <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation">
         <span class="hamburger" aria-hidden="true"></span>
       </button>
+
       <nav id="primaryNav" class="primary-nav" aria-label="Main navigation">
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
@@ -36,7 +43,7 @@
   <main id="opps" class="container">
     <h1>Investment Opportunities</h1>
 
-    <div class="controls" aria-hidden="false">
+    <div class="controls">
       <label for="filterCategory">Filter by category</label>
       <select id="filterCategory">
         <option value="all">All</option>
@@ -53,12 +60,12 @@
     </div>
 
     <section id="opportunityGrid" class="opportunity-grid" aria-live="polite" aria-label="List of opportunities">
-      <!-- Dynamic cards injected here -->
+      <!-- Cards injected dynamically -->
     </section>
   </main>
 
-  <!-- Accessible modal -->
-  <div id="oppModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
+  <!-- Modal -->
+  <div id="oppModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-content">
       <button class="modal-close" aria-label="Close dialog">&times;</button>
       <h2 id="modalTitle"></h2>
@@ -70,12 +77,13 @@
     <div class="container">
       <p>&copy; <span id="footerYear"></span> Lawrence Ngwenya</p>
       <p>
-        <a href="references.html">References</a> • 
+        <a href="references.html">References</a> •
         <a href="contacts.html">Contact</a>
       </p>
     </div>
   </footer>
 
+  <!-- Correct script path -->
   <script type="module" src="scripts/opportunities.mjs"></script>
 </body>
 </html>
