@@ -169,10 +169,7 @@
 
 
 /* Card width must not expand 100% unnaturally */
-.opp-card {
-  width: 100%;
-  box-sizing: border-box;
-}
+
 
 /* Footer Styles */
 .site-footer {
