@@ -2,7 +2,8 @@
 
 /* HEADER */
 .site-header {
-  background: #fff;
+  background: var(--primary);
+  color: #FFFFFF;
   box-shadow: var(--shadow);
 }
 
@@ -15,7 +16,7 @@
 .logo {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--primary);
+  color: #FFFFFF;
 }
 
 /* NAVIGATION */
@@ -31,6 +32,12 @@
 
 .nav-list a {
   font-weight: 600;
+  color: #FFFFFF;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  color: var(--secondary);
 }
 
 /* MOBILE NAV BUTTON */
@@ -48,8 +55,9 @@
   display: block;
   position: relative;
 }
-.hamburger::after,
-.hamburger::before {
+
+.hamburger::before,
+.hamburger::after {
   content: "";
   width: 24px;
   height: 3px;
@@ -57,33 +65,31 @@
   position: absolute;
   left: 0;
 }
+
 .hamburger::before { top: -7px; }
 .hamburger::after { top: 7px; }
 
 /* HERO */
-/* HERO WITH BACKGROUND IMAGE */
 .hero {
   position: relative;
   background: url("../images/hero.jpg") center/cover no-repeat;
-  height: 60vh;                /* controls height of hero */
-  min-height: 380px;           /* ensures it’s not too small */
+  height: 60vh;
+  min-height: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  color: white;                /* hero text color */
+  color: white;
   text-align: center;
 }
 
-/* Optional overlay for darkening image */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* adjust darkness */
+  background: rgba(0, 0, 0, 0.45);
 }
 
-/* Ensure text is above overlay */
 .hero-content {
   position: relative;
   z-index: 2;
@@ -119,11 +125,7 @@
 
 /* RESPONSIVE BREAKPOINT */
 @media (max-width: 768px) {
-  
-  /* MOBILE NAV */
-  .nav-toggle {
-    display: block;
-  }
+  .nav-toggle { display: block; }
 
   .primary-nav {
     display: none;
@@ -141,50 +143,25 @@
     text-align: center;
   }
 
-  /* HERO STACK */
   .cta-row {
     flex-direction: column;
   }
-
 }
 
-/* HEADER FIX */
-.site-header {
-  background-color: var(--primary); /* green header */
-  color: #FFFFFF;                   /* make text white for contrast */
-  box-shadow: var(--shadow);
-}
-
-.site-header .logo,
-.site-header .nav-list a {
-  color: #FFFFFF; /* ensure logo and nav links are white */
-}
-
-.site-header .nav-list a:hover,
-.site-header .nav-list a:focus {
-  color: var(--secondary); /* optional: hover yellow */
-}
-
-/* Grid — FORCE the cards into columns */
-
-
-/* Card width must not expand 100% unnaturally */
-
-
-/* Footer Styles */
+/* FOOTER */
 .site-footer {
-  background-color: #2c6e34;  /* Update to match your footer color */
+  background-color: #2c6e34;
   color: white;
-  text-align: center;          /* Center the text */
-  padding: 1rem 0;             /* Vertical padding */
+  text-align: center;
+  padding: 1rem 0;
   width: 100%;
 }
 
 .site-footer .container {
   display: flex;
-  justify-content: center;      /* Centers content horizontally */
-  align-items: center;          /* Vertically align if needed */
-  gap: 1rem;                    /* Adds space between text and links */
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .site-footer p {
@@ -192,10 +169,10 @@
 }
 
 .site-footer a {
-  color: #d3f9d8; /* Light green for links */
+  color: #d3f9d8;
   text-decoration: none;
 }
 
 .site-footer a:hover {
-  text-decoration: underline; /* Add hover effect */
+  text-decoration: underline;
 }
