@@ -166,27 +166,7 @@
 }
 
 /* Grid — FORCE the cards into columns */
-.opportunity-grid {
-  display: grid !important;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 1200px;   /* ensures grid has room */
-  margin: 0 auto;      /* center the grid */
-  padding: 1rem 0;
-}
 
-@media (min-width: 700px) {
-  .opportunity-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-@media (min-width: 1000px) {
-  .opportunity-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-}
 
 /* Card width must not expand 100% unnaturally */
 .opp-card {
