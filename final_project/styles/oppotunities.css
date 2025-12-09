@@ -36,6 +36,10 @@
   margin: 1.5rem 0;
 }
 
+.opportunities.container {
+  padding: 1rem 0; /* remove excess padding from base.css */
+}
+
 @media (max-width: 900px) {
   .opportunities {
     grid-template-columns: repeat(2, 1fr);
