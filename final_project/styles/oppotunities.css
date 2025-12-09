@@ -74,6 +74,9 @@
   display: block;
 }
 
+img { width: 100%; }
+
+
 .opp figcaption {
   padding: 0.6rem;
   font-size: 1rem;
