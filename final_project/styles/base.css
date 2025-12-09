@@ -39,11 +39,7 @@ body {
 }
 
 /* LAYOUT BASE */
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 1rem;
-}
+
 
 .text-center {
   text-align: center;
